@@ -29,20 +29,6 @@ void cols(string file) {
     csv.close();
 }
 
-// void print(string file, int colW) { 
-//     ifstream csv;
-//     csv.open(file);
-//     string line, col;
-//     while (getline(csv, line)) {
-//             istringstream iss(line);
-//             while (getline(iss, col, ',')) {
-//                 cout << setw(colW) << col;
-//             }
-//             cout << endl;
-//     }
-//     csv.close();
-// }
-
 void print(string arr[][50], int colW, int countC, int j) { 
     for (int i = 0; i < j; ++i) {
             for (int k = 0; k < countC; ++k) {
@@ -209,35 +195,6 @@ void max(string arr[][50], string colN, int rows, int countC) {
     cout << "The max for col \"" << arr[0][num] << "\" = " << max << endl;
 }
 
-// void min(string arr[][50], string colN, int rows, int countC) {
-//     int num;
-//     for (int i=0; i<countC; i++) {
-//         if (arr[0][i] == colN) {
-//             num = i;
-//         }
-//     }
-//     string min = arr[1][num];
-//     for (int j = 2; j<=rows; j++) {
-//         if (arr[j][num] == "\0") continue;
-//         if (arr[j][num] < min) min = arr[j][num];
-//     }
-//     cout << "The min for col \"" << arr[0][num] << "\" = " << min << endl;
-// }
-
-// void max(string arr[][50], string colN, int rows, int countC) {
-//     int num;
-//     for (int i=0; i<countC; i++) {
-//         if (arr[0][i] == colN) {
-//             num = i;
-//         }
-//     }
-//     string max = arr[1][num];
-//     for (int j = 1; j<=rows; j++) {
-//         if (arr[j][num] > max && !arr[j][num].empty()) max = arr[j][num];
-//     }
-//     cout << "The max for col \"" << arr[0][num] << "\" = " << max << endl;
-// }
-
 void avg(string arr[][50], string colN, int rows, int countC) {
     int num;
     int newRow = rows;
@@ -294,11 +251,6 @@ int main(int argc, char* argv[]) {
     while (getline(csv, row)) {
         istringstream data(row);
         for (int i=0; i<=countC; i++) {
-            // if (getline(data, arr[j][i], ',')) {
-            
-            // } else {
-            //     arr[j][countC] = "\0";
-            // }
             getline(data, arr[j][i], ',');
         }
         j++;
